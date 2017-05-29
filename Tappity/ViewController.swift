@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     // coincedentally is the score of the user
     var presses: Int = 0
     
-    // stores the 10 possible colors to add difficulty
-    var colors: Array = [UIColor.gray, UIColor.blue, UIColor.brown, UIColor.cyan, UIColor.lightGray, UIColor.red, UIColor.green, UIColor.orange, UIColor.purple, UIColor.yellow]
+    // stores the 10 possible colours to add difficulty
+    var colours: Array = [UIColor.gray, UIColor.blue, UIColor.brown, UIColor.cyan, UIColor.lightGray, UIColor.red, UIColor.green, UIColor.orange, UIColor.purple, UIColor.yellow]
     
 
     // mainButtonPushed func hooked up to the button
@@ -59,8 +59,8 @@ class ViewController: UIViewController {
         // generate random number
         let random = Int(arc4random_uniform(10))
         
-        // set background color of button to random color
-        sender.backgroundColor = colors[random]
+        // set background colours of button to random colours
+        sender.backgroundColor = colours[random]
         
         
     }
@@ -81,8 +81,8 @@ class ViewController: UIViewController {
         // generate random number
         let random = Int(arc4random_uniform(10))
         
-        // set background color of button to random color
-        mainButton.backgroundColor = colors[random]
+        // set background colours of button to random colours
+        mainButton.backgroundColor = colours[random]
         
         // var for timer to use
         var secondsLeft: Int = 30
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
         // update the timeLabel
         timeLabel.text = "30"
         
-        // reset main button color
+        // reset main button colours
         mainButton.backgroundColor = UIColor.white
         
     }
