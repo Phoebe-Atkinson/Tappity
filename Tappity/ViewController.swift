@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     
     // isPlaying boolean var to store whether the user is in a game or not
     var isPlaying: Bool = false
+    
+    // presses var to store how many times the user presses the button
+    // coincedentally is the score of the user
     var presses: Int = 0
     
 
@@ -44,6 +47,9 @@ class ViewController: UIViewController {
         // increment the presses var once
         presses += 1
         
+        // update the scoreLabel
+        scoreLabel.text = "\(presses)"
+        
         
     }
     
@@ -56,6 +62,9 @@ class ViewController: UIViewController {
         
         // increment presses on first go because i'm nice
         presses += 1
+        
+        // update the scoreLabel
+        scoreLabel.text = "\(presses)"
         
         // var for timer to use
         var secondsLeft: Int = 30
@@ -74,6 +83,9 @@ class ViewController: UIViewController {
                 // call end game func
                 self.endGame()
                 
+                // invalidate the timer
+                timer.invalidate()
+                
                 // return so any following code will not be fun
                 return
                 
@@ -86,8 +98,36 @@ class ViewController: UIViewController {
     
     func endGame() {
         
+        // create the ui alert controller
+        let alertController = UIAlertController (title: "Game Over", message: "Your score is \(presses)", preferredStyle: .actionSheet)
+        
+        // call the alert views present method
+        self.present(alertController, animated: true, completion: nil)
+        
+        // create an action for the ok button underneath that calls the reset() func
+        let okAction = UIAlertAction (title: "OK", style: .default, handler: { (alertAction) in
+            self.reset()
+        })
+        
+        // add the action onto the alert view
+        alertController.addAction(okAction)
+        
+    }
+    
+    
+    func reset() {
+        
         // set isPlaying to false
         isPlaying = false
+        
+        // reset the presses var
+        presses = 0
+        
+        // update the scoreLabel
+        scoreLabel.text = "\(presses)"
+        
+        // update the timeLabel
+        timeLabel.text = "30"
         
     }
 
