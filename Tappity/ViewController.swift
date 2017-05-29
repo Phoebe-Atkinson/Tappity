@@ -42,19 +42,52 @@ class ViewController: UIViewController {
         //
         
         // increment the presses var once
+        presses += 1
         
         
     }
+    
+    
     
     func startGame() {
         
         // set isPlaying to true
         isPlaying = true
         
-        // begin the game and start the timer
-        
         // increment presses on first go because i'm nice
         presses += 1
+        
+        // var for timer to use
+        var secondsLeft: Int = 30
+        
+        // begin the game and start the timer
+        let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
+            
+            // update the secondsLeft var
+            secondsLeft -= 1
+            
+            // update the timeLabel
+            self.timeLabel.text = "\(secondsLeft)"
+            
+            if (secondsLeft == 0) {
+                
+                // call end game func
+                self.endGame()
+                
+                // return so any following code will not be fun
+                return
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    func endGame() {
+        
+        // set isPlaying to false
+        isPlaying = false
         
     }
 
