@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     // the Score display label
     @IBOutlet var scoreLabel: UILabel!
     
+    // the main button
+    @IBOutlet var mainButton: UIButton!
+    
     
     // isPlaying boolean var to store whether the user is in a game or not
     var isPlaying: Bool = false
@@ -23,6 +26,9 @@ class ViewController: UIViewController {
     // presses var to store how many times the user presses the button
     // coincedentally is the score of the user
     var presses: Int = 0
+    
+    // stores the 10 possible colors to add difficulty
+    var colors: Array = [UIColor.gray, UIColor.blue, UIColor.brown, UIColor.cyan, UIColor.lightGray, UIColor.red, UIColor.green, UIColor.orange, UIColor.purple, UIColor.yellow]
     
 
     // mainButtonPushed func hooked up to the button
@@ -50,6 +56,12 @@ class ViewController: UIViewController {
         // update the scoreLabel
         scoreLabel.text = "\(presses)"
         
+        // generate random number
+        let random = Int(arc4random_uniform(10))
+        
+        // set background color of button to random color
+        sender.backgroundColor = colors[random]
+        
         
     }
     
@@ -65,6 +77,12 @@ class ViewController: UIViewController {
         
         // update the scoreLabel
         scoreLabel.text = "\(presses)"
+        
+        // generate random number
+        let random = Int(arc4random_uniform(10))
+        
+        // set background color of button to random color
+        mainButton.backgroundColor = colors[random]
         
         // var for timer to use
         var secondsLeft: Int = 30
@@ -128,6 +146,9 @@ class ViewController: UIViewController {
         
         // update the timeLabel
         timeLabel.text = "30"
+        
+        // reset main button color
+        mainButton.backgroundColor = UIColor.white
         
     }
 
