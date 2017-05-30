@@ -161,7 +161,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Tap Me">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="mainButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSd-I3-pEB"/>
@@ -194,6 +194,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" id="qqA-uJ-N5y"/>
                     <connections>
+                        <outlet property="gameView" destination="8bC-Xf-vdC" id="Hnv-FU-wSD"/>
                         <outlet property="mainButton" destination="T64-R8-oXK" id="vlL-SC-VI1"/>
                         <outlet property="scoreLabel" destination="7WB-S6-Hju" id="FGj-Xo-rJ5"/>
                         <outlet property="timeLabel" destination="bkQ-CR-XrN" id="0TV-fb-2zh"/>

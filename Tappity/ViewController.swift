@@ -22,6 +22,9 @@ class ViewController: UIViewController {
     
     
     
+    // the game view
+    @IBOutlet var gameView: UIView!
+    
     // the Time display label
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -74,8 +77,8 @@ class ViewController: UIViewController {
         // generate random number
         let random = Int(arc4random_uniform(10))
         
-        // set background colours of button to random colours
-        sender.backgroundColor = colours[random]
+        // set background colours of game view to random colours
+        gameView.backgroundColor = colours[random]
         
         
     }
@@ -97,10 +100,10 @@ class ViewController: UIViewController {
         let random = Int(arc4random_uniform(10))
         
         // set background colours of button to random colours
-        mainButton.backgroundColor = colours[random]
+        gameView.backgroundColor = colours[random]
         
         // var for timer to use
-        var secondsLeft: Int = 5
+        var secondsLeft: Int = 30
         
         // begin the game and start the timer
         let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
@@ -182,8 +185,8 @@ class ViewController: UIViewController {
         // update the timeLabel
         timeLabel.text = "30"
         
-        // reset main button colours
-        mainButton.backgroundColor = UIColor.white
+        // reset main view colours
+        gameView.backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         
     }
     

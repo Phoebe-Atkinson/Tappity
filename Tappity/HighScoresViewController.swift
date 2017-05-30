@@ -11,7 +11,7 @@ import UIKit
 class HighScoresViewController: UIViewController {
     
     
-    // highscore lists:
+    // highscore label IBOutlets:
     
     @IBOutlet weak var highScoreOne: UILabel!
     @IBOutlet weak var highScoreTwo: UILabel!
@@ -25,8 +25,8 @@ class HighScoresViewController: UIViewController {
     @IBOutlet weak var highScoreTen: UILabel!
     
     
+    // to update the labels to their appropriate high scores
     func updateHighScoresList(_ scores: Array<Int>) {
-        
         
         highScoreOne.text = "\(String(scores[0]))"
         highScoreTwo.text = "\(String(scores[1]))"
@@ -38,7 +38,6 @@ class HighScoresViewController: UIViewController {
         highScoreEight.text = "\(String(scores[7]))"
         highScoreNine.text = "\(String(scores[8]))"
         highScoreTen.text = "\(String(scores[9]))"
-        
         
     }
 
