@@ -75,15 +75,8 @@ class ViewController: UIViewController {
             // call the startGame func
             startGame()
             
-            // return so any following code will not be fun
-            return
-            
         }
         
-        
-        //    if isPlaying
-        // vv              vv
-        //
         
         // increment the presses var once
         presses += 1
@@ -97,6 +90,9 @@ class ViewController: UIViewController {
         // set background colours of game view to random colours
         gameView.backgroundColor = colours[random]
         
+        // move button randomly
+        moveButton()
+        
         
     }
     
@@ -106,18 +102,6 @@ class ViewController: UIViewController {
         
         // set isPlaying to true
         isPlaying = true
-        
-        // increment presses on first go because i'm nice
-        presses += 1
-        
-        // update the scoreLabel
-        scoreLabel.text = "\(presses)"
-        
-        // generate random number
-        let random = Int(arc4random_uniform(10))
-        
-        // set background colours of button to random colours
-        gameView.backgroundColor = colours[random]
         
         // var for timer to use
         var secondsLeft: Int = 30
@@ -207,6 +191,37 @@ class ViewController: UIViewController {
         
         // reset main view colours
         gameView.backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+        
+        // reset main button position:
+        mainButton.center = view.center
+        
+    }
+    
+    
+    
+    func moveButton() {
+        
+        // move button randomly:
+        
+        // Find the button's width and height
+        let buttonWidth = mainButton.frame.width
+        let buttonHeight = mainButton.frame.height
+        
+        // Find the width and height of the enclosing view
+        let viewWidth = mainButton.superview!.bounds.width
+        let viewHeight = mainButton.superview!.bounds.height
+        
+        // Compute width and height of the area to contain the button's center
+        let xwidth = viewWidth - buttonWidth
+        let yheight = viewHeight - buttonHeight
+        
+        // Generate a random x and y offset
+        let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
+        let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
+        
+        // Offset the button's center by the random offsets.
+        mainButton.center.x = xoffset + buttonWidth / 2
+        mainButton.center.y = yoffset + buttonHeight / 2
         
     }
     
