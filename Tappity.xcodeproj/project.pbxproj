@@ -12,6 +12,7 @@
 		CAC171091EDBA50D00C48DD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC171071EDBA50D00C48DD6 /* Main.storyboard */; };
 		CAC1710B1EDBA50D00C48DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC1710A1EDBA50D00C48DD6 /* Assets.xcassets */; };
 		CAC1710E1EDBA50D00C48DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC1710C1EDBA50D00C48DD6 /* LaunchScreen.storyboard */; };
+		CAFC555B1EDCFD550053A86E /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC555A1EDCFD550053A86E /* HighScoresViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CAC1710A1EDBA50D00C48DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAC1710D1EDBA50D00C48DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAC1710F1EDBA50D00C48DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAFC555A1EDCFD550053A86E /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				CAC171031EDBA50D00C48DD6 /* AppDelegate.swift */,
 				CAC171051EDBA50D00C48DD6 /* ViewController.swift */,
 				CAC171071EDBA50D00C48DD6 /* Main.storyboard */,
+				CAFC555A1EDCFD550053A86E /* HighScoresViewController.swift */,
 				CAC1710A1EDBA50D00C48DD6 /* Assets.xcassets */,
 				CAC1710C1EDBA50D00C48DD6 /* LaunchScreen.storyboard */,
 				CAC1710F1EDBA50D00C48DD6 /* Info.plist */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAFC555B1EDCFD550053A86E /* HighScoresViewController.swift in Sources */,
 				CAC171061EDBA50D00C48DD6 /* ViewController.swift in Sources */,
 				CAC171041EDBA50D00C48DD6 /* AppDelegate.swift in Sources */,
 			);
@@ -302,6 +306,7 @@
 				CAC171141EDBA50D00C48DD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

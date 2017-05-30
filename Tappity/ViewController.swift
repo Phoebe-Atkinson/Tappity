@@ -10,14 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // used to initialise the IBOutlets for the HighScores view
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        tabBarController?.selectedIndex = 1
+        tabBarController?.selectedIndex = 0
+        
+    }
+    
+    
+    
     // the Time display label
-    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     // the Score display label
-    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     // the main button
-    @IBOutlet var mainButton: UIButton!
+    @IBOutlet weak var mainButton: UIButton!
     
     
     // isPlaying boolean var to store whether the user is in a game or not
@@ -30,7 +42,10 @@ class ViewController: UIViewController {
     // stores the 10 possible colours to add difficulty
     var colours: Array = [UIColor.gray, UIColor.blue, UIColor.brown, UIColor.cyan, UIColor.lightGray, UIColor.red, UIColor.green, UIColor.orange, UIColor.purple, UIColor.yellow]
     
-
+    // stores the top ten high scores
+    var highScores: Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    
     // mainButtonPushed func hooked up to the button
     @IBAction func mainButtonPushed(_ sender: UIButton) {
         
@@ -85,7 +100,7 @@ class ViewController: UIViewController {
         mainButton.backgroundColor = colours[random]
         
         // var for timer to use
-        var secondsLeft: Int = 30
+        var secondsLeft: Int = 5
         
         // begin the game and start the timer
         let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
@@ -135,6 +150,26 @@ class ViewController: UIViewController {
     
     func reset() {
         
+        // highscores
+        
+        // I have used a method of checking if the lowest high score is smaller than the
+        // current score of the user, if so setting the last value to the current score,
+        // then sorting the array in descending order.
+        if (presses > highScores[9]) {
+            
+            highScores[9] = presses
+            
+        }
+        
+        // order the array in descending order
+        highScores = highScores.sorted { $0 > $1 }
+        
+        // fetching the class of the other viewcontroller.swift file
+        let theHighScoresViewController = tabBarController?.viewControllers![1] as! HighScoresViewController
+        
+        // calling the updateHighScoresList
+        theHighScoresViewController.updateHighScoresList(highScores)
+        
         // set isPlaying to false
         isPlaying = false
         
@@ -151,6 +186,8 @@ class ViewController: UIViewController {
         mainButton.backgroundColor = UIColor.white
         
     }
+    
+    
 
 
 }
