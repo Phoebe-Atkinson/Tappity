@@ -10,17 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // used to initialise the IBOutlets for the HighScores view
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        tabBarController?.selectedIndex = 1
-        tabBarController?.selectedIndex = 0
-        
-    }
-    
-    
     
     // the game view
     @IBOutlet var gameView: UIView!
@@ -47,6 +36,34 @@ class ViewController: UIViewController {
     
     // stores the top ten high scores
     var highScores: Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    
+    
+    // used to initialise the IBOutlets for the HighScores view
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        tabBarController?.selectedIndex = 1
+        tabBarController?.selectedIndex = 0
+        
+
+        
+        // retreive any saved values
+        if let savedValue = UserDefaults.standard.array(forKey: "highscores") {
+            
+            highScores = savedValue as! Array<Int>
+            
+            // fetching the class of the other viewcontroller.swift file
+            let theHighScoresViewController = tabBarController?.viewControllers![1] as! HighScoresViewController
+            
+            // calling the updateHighScoresList
+            theHighScoresViewController.updateHighScoresList(highScores)
+            
+            
+        }
+        
+    }
     
     
     // mainButtonPushed func hooked up to the button
@@ -166,6 +183,9 @@ class ViewController: UIViewController {
         
         // order the array in descending order
         highScores = highScores.sorted { $0 > $1 }
+        
+        // save the highScores
+        UserDefaults.standard.set(highScores, forKey: "highscores")
         
         // fetching the class of the other viewcontroller.swift file
         let theHighScoresViewController = tabBarController?.viewControllers![1] as! HighScoresViewController
