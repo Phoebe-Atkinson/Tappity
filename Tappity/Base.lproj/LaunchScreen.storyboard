@@ -21,22 +21,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tappity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vI-Ad-8YO">
-                                <rect key="frame" x="81" y="158" width="212" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tappity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vI-Ad-8YO">
+                                <rect key="frame" x="109" y="170" width="157" height="58.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58.5" id="oxF-uu-fXu"/>
+                                    <constraint firstAttribute="width" constant="157" id="u9e-GH-s3z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By Roan Atkinson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAO-aM-9M9">
-                                <rect key="frame" x="120" y="295" width="134" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Roan Atkinson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAO-aM-9M9">
+                                <rect key="frame" x="120.5" y="268.5" width="134" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="30N-ml-yIW"/>
+                                    <constraint firstAttribute="width" constant="134" id="Cwg-dA-weR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4vI-Ad-8YO" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="150" id="8tj-9h-9nn"/>
+                            <constraint firstItem="4vI-Ad-8YO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Efb-wr-8mi"/>
+                            <constraint firstItem="vAO-aM-9M9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SV6-E1-lHS"/>
+                            <constraint firstItem="vAO-aM-9M9" firstAttribute="top" secondItem="4vI-Ad-8YO" secondAttribute="bottom" constant="40" id="t1l-Xi-aBm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

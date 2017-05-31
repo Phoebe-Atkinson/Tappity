@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // main button contraints
+    @IBOutlet var yConstraint: NSLayoutConstraint!
+    @IBOutlet var xConstraint: NSLayoutConstraint!
     
     // the game view
     @IBOutlet var gameView: UIView!
@@ -192,8 +195,9 @@ class ViewController: UIViewController {
         // reset main view colours
         gameView.backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         
-        // reset main button position:
-        mainButton.center = view.center
+        // reset main button constraints:
+        xConstraint.constant = 0
+        yConstraint.constant = 0
         
     }
     
@@ -203,25 +207,41 @@ class ViewController: UIViewController {
         
         // move button randomly:
         
-        // Find the button's width and height
-        let buttonWidth = mainButton.frame.width
-        let buttonHeight = mainButton.frame.height
         
-        // Find the width and height of the enclosing view
-        let viewWidth = mainButton.superview!.bounds.width
-        let viewHeight = mainButton.superview!.bounds.height
         
-        // Compute width and height of the area to contain the button's center
-        let xwidth = viewWidth - buttonWidth
-        let yheight = viewHeight - buttonHeight
+        // X Axis:
         
-        // Generate a random x and y offset
-        let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
-        let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
         
-        // Offset the button's center by the random offsets.
-        mainButton.center.x = xoffset + buttonWidth / 2
-        mainButton.center.y = yoffset + buttonHeight / 2
+        // generate random num between 0 and max X pos for button
+        let xRandNum = (view.frame.width / 2) - (mainButton.frame.width / 2)
+        var xRand = Int(arc4random_uniform(UInt32(xRandNum + 1)))
+        
+        // random chance of num being negative or positive
+        let xDir = arc4random_uniform(2)
+        if (xDir == 0) {
+            xRand = xRand * (-1)
+        }
+        
+        
+        
+        // Y Axis:
+        
+        
+        // generate random num between 0 and max Y pos for button
+        let yRandNum = (view.frame.height / 2) - (mainButton.frame.height / 2)
+        var yRand = Int(arc4random_uniform(UInt32(yRandNum + 1)))
+        
+        // random chance of num being negative or positive
+        let yDir = arc4random_uniform(2)
+        if (yDir == 0) {
+            yRand = yRand * (-1)
+        }
+        
+        
+        
+        // set the constraint constants
+        xConstraint.constant = CGFloat(xRand)
+        yConstraint.constant = CGFloat(yRand)
         
     }
     
