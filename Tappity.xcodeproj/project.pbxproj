@@ -12,8 +12,58 @@
 		CAC171091EDBA50D00C48DD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC171071EDBA50D00C48DD6 /* Main.storyboard */; };
 		CAC1710B1EDBA50D00C48DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC1710A1EDBA50D00C48DD6 /* Assets.xcassets */; };
 		CAC1710E1EDBA50D00C48DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC1710C1EDBA50D00C48DD6 /* LaunchScreen.storyboard */; };
+		CAF14EE41EE0EC880083B9D5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF14EE21EE0EC880083B9D5 /* Interface.storyboard */; };
+		CAF14EE61EE0EC880083B9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF14EE51EE0EC880083B9D5 /* Assets.xcassets */; };
+		CAF14EED1EE0EC880083B9D5 /* Watch Tappity Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CAF14EEC1EE0EC880083B9D5 /* Watch Tappity Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CAF14EF41EE0EC880083B9D5 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF14EF31EE0EC880083B9D5 /* InterfaceController.swift */; };
+		CAF14EF61EE0EC880083B9D5 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF14EF51EE0EC880083B9D5 /* ExtensionDelegate.swift */; };
+		CAF14EF81EE0EC880083B9D5 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF14EF71EE0EC880083B9D5 /* NotificationController.swift */; };
+		CAF14EFA1EE0EC880083B9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF14EF91EE0EC880083B9D5 /* Assets.xcassets */; };
+		CAF14EFE1EE0EC880083B9D5 /* Watch Tappity.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CAF14EE01EE0EC880083B9D5 /* Watch Tappity.app */; };
 		CAFC555B1EDCFD550053A86E /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC555A1EDCFD550053A86E /* HighScoresViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CAF14EEE1EE0EC880083B9D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAC170F81EDBA50D00C48DD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAF14EEB1EE0EC880083B9D5;
+			remoteInfo = "Watch Tappity Extension";
+		};
+		CAF14EFC1EE0EC880083B9D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAC170F81EDBA50D00C48DD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAF14EDF1EE0EC880083B9D5;
+			remoteInfo = "Watch Tappity";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CAF14F041EE0EC880083B9D5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CAF14EED1EE0EC880083B9D5 /* Watch Tappity Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF14F061EE0EC880083B9D5 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CAF14EFE1EE0EC880083B9D5 /* Watch Tappity.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CAC171001EDBA50D00C48DD6 /* Tappity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tappity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,11 +73,29 @@
 		CAC1710A1EDBA50D00C48DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAC1710D1EDBA50D00C48DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAC1710F1EDBA50D00C48DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF14EE01EE0EC880083B9D5 /* Watch Tappity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch Tappity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF14EE31EE0EC880083B9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		CAF14EE51EE0EC880083B9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CAF14EE71EE0EC880083B9D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF14EEC1EE0EC880083B9D5 /* Watch Tappity Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Tappity Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF14EF21EE0EC880083B9D5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		CAF14EF31EE0EC880083B9D5 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		CAF14EF51EE0EC880083B9D5 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		CAF14EF71EE0EC880083B9D5 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		CAF14EF91EE0EC880083B9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CAF14EFB1EE0EC880083B9D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAFC555A1EDCFD550053A86E /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CAC170FD1EDBA50D00C48DD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF14EE91EE0EC880083B9D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				CAC171021EDBA50D00C48DD6 /* Tappity */,
+				CAF14EE11EE0EC880083B9D5 /* Watch Tappity */,
+				CAF14EF01EE0EC880083B9D5 /* Watch Tappity Extension */,
 				CAC171011EDBA50D00C48DD6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				CAC171001EDBA50D00C48DD6 /* Tappity.app */,
+				CAF14EE01EE0EC880083B9D5 /* Watch Tappity.app */,
+				CAF14EEC1EE0EC880083B9D5 /* Watch Tappity Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +139,37 @@
 			path = Tappity;
 			sourceTree = "<group>";
 		};
+		CAF14EE11EE0EC880083B9D5 /* Watch Tappity */ = {
+			isa = PBXGroup;
+			children = (
+				CAF14EE21EE0EC880083B9D5 /* Interface.storyboard */,
+				CAF14EE51EE0EC880083B9D5 /* Assets.xcassets */,
+				CAF14EE71EE0EC880083B9D5 /* Info.plist */,
+			);
+			path = "Watch Tappity";
+			sourceTree = "<group>";
+		};
+		CAF14EF01EE0EC880083B9D5 /* Watch Tappity Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CAF14EF31EE0EC880083B9D5 /* InterfaceController.swift */,
+				CAF14EF51EE0EC880083B9D5 /* ExtensionDelegate.swift */,
+				CAF14EF71EE0EC880083B9D5 /* NotificationController.swift */,
+				CAF14EF91EE0EC880083B9D5 /* Assets.xcassets */,
+				CAF14EFB1EE0EC880083B9D5 /* Info.plist */,
+				CAF14EF11EE0EC880083B9D5 /* Supporting Files */,
+			);
+			path = "Watch Tappity Extension";
+			sourceTree = "<group>";
+		};
+		CAF14EF11EE0EC880083B9D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CAF14EF21EE0EC880083B9D5 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +180,51 @@
 				CAC170FC1EDBA50D00C48DD6 /* Sources */,
 				CAC170FD1EDBA50D00C48DD6 /* Frameworks */,
 				CAC170FE1EDBA50D00C48DD6 /* Resources */,
+				CAF14F061EE0EC880083B9D5 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CAF14EFD1EE0EC880083B9D5 /* PBXTargetDependency */,
 			);
 			name = Tappity;
 			productName = Tappity;
 			productReference = CAC171001EDBA50D00C48DD6 /* Tappity.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CAF14EDF1EE0EC880083B9D5 /* Watch Tappity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAF14F051EE0EC880083B9D5 /* Build configuration list for PBXNativeTarget "Watch Tappity" */;
+			buildPhases = (
+				CAF14EDE1EE0EC880083B9D5 /* Resources */,
+				CAF14F041EE0EC880083B9D5 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAF14EEF1EE0EC880083B9D5 /* PBXTargetDependency */,
+			);
+			name = "Watch Tappity";
+			productName = "Watch Tappity";
+			productReference = CAF14EE01EE0EC880083B9D5 /* Watch Tappity.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CAF14EEB1EE0EC880083B9D5 /* Watch Tappity Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAF14F031EE0EC880083B9D5 /* Build configuration list for PBXNativeTarget "Watch Tappity Extension" */;
+			buildPhases = (
+				CAF14EE81EE0EC880083B9D5 /* Sources */,
+				CAF14EE91EE0EC880083B9D5 /* Frameworks */,
+				CAF14EEA1EE0EC880083B9D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watch Tappity Extension";
+			productName = "Watch Tappity Extension";
+			productReference = CAF14EEC1EE0EC880083B9D5 /* Watch Tappity Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +237,16 @@
 				ORGANIZATIONNAME = "Roan Atkinson";
 				TargetAttributes = {
 					CAC170FF1EDBA50D00C48DD6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = EBMT6KV329;
+						ProvisioningStyle = Automatic;
+					};
+					CAF14EDF1EE0EC880083B9D5 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = EBMT6KV329;
+						ProvisioningStyle = Automatic;
+					};
+					CAF14EEB1EE0EC880083B9D5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = EBMT6KV329;
 						ProvisioningStyle = Automatic;
@@ -118,6 +267,8 @@
 			projectRoot = "";
 			targets = (
 				CAC170FF1EDBA50D00C48DD6 /* Tappity */,
+				CAF14EDF1EE0EC880083B9D5 /* Watch Tappity */,
+				CAF14EEB1EE0EC880083B9D5 /* Watch Tappity Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +281,23 @@
 				CAC1710E1EDBA50D00C48DD6 /* LaunchScreen.storyboard in Resources */,
 				CAC1710B1EDBA50D00C48DD6 /* Assets.xcassets in Resources */,
 				CAC171091EDBA50D00C48DD6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF14EDE1EE0EC880083B9D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAF14EE61EE0EC880083B9D5 /* Assets.xcassets in Resources */,
+				CAF14EE41EE0EC880083B9D5 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF14EEA1EE0EC880083B9D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAF14EFA1EE0EC880083B9D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +314,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CAF14EE81EE0EC880083B9D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAF14EF81EE0EC880083B9D5 /* NotificationController.swift in Sources */,
+				CAF14EF61EE0EC880083B9D5 /* ExtensionDelegate.swift in Sources */,
+				CAF14EF41EE0EC880083B9D5 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CAF14EEF1EE0EC880083B9D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAF14EEB1EE0EC880083B9D5 /* Watch Tappity Extension */;
+			targetProxy = CAF14EEE1EE0EC880083B9D5 /* PBXContainerItemProxy */;
+		};
+		CAF14EFD1EE0EC880083B9D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAF14EDF1EE0EC880083B9D5 /* Watch Tappity */;
+			targetProxy = CAF14EFC1EE0EC880083B9D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CAC171071EDBA50D00C48DD6 /* Main.storyboard */ = {
@@ -163,6 +354,14 @@
 				CAC1710D1EDBA50D00C48DD6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CAF14EE21EE0EC880083B9D5 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAF14EE31EE0EC880083B9D5 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -267,6 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EBMT6KV329;
 				INFOPLIST_FILE = Tappity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgscomputing.RoanAtkinson.Tappity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -280,10 +480,81 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EBMT6KV329;
 				INFOPLIST_FILE = Tappity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgscomputing.RoanAtkinson.Tappity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		CAF14EFF1EE0EC880083B9D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EBMT6KV329;
+				IBSC_MODULE = Watch_Tappity_Extension;
+				INFOPLIST_FILE = "Watch Tappity/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgscomputing.RoanAtkinson.Tappity.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		CAF14F001EE0EC880083B9D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EBMT6KV329;
+				IBSC_MODULE = Watch_Tappity_Extension;
+				INFOPLIST_FILE = "Watch Tappity/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgscomputing.RoanAtkinson.Tappity.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		CAF14F011EE0EC880083B9D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = EBMT6KV329;
+				INFOPLIST_FILE = "Watch Tappity Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgscomputing.RoanAtkinson.Tappity.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		CAF14F021EE0EC880083B9D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = EBMT6KV329;
+				INFOPLIST_FILE = "Watch Tappity Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgscomputing.RoanAtkinson.Tappity.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
@@ -307,6 +578,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CAF14F031EE0EC880083B9D5 /* Build configuration list for PBXNativeTarget "Watch Tappity Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF14F011EE0EC880083B9D5 /* Debug */,
+				CAF14F021EE0EC880083B9D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CAF14F051EE0EC880083B9D5 /* Build configuration list for PBXNativeTarget "Watch Tappity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF14EFF1EE0EC880083B9D5 /* Debug */,
+				CAF14F001EE0EC880083B9D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
