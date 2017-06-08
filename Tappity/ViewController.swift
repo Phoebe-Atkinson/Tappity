@@ -53,6 +53,7 @@ class ViewController: UIViewController {
     var currentName: String = ""
     
     
+    // struct to store highscores and names hand in hand
     struct userScore {
         var score: Int
         var name: String
@@ -67,6 +68,8 @@ class ViewController: UIViewController {
     
     // func for handling the rotation of the screen
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        // move certain elements accordingly
         
         if (UIDevice.current.orientation.isLandscape) {
             
@@ -99,30 +102,36 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        // to initialise the highScores view
         tabBarController?.selectedIndex = 1
         tabBarController?.selectedIndex = 0
         
         
+        // give highscores some blank filler values
         for _ in 1...10 {
             highScores.append(userScore(score: 0, name: ""))
         }
         
+        // just used to retreive saved data
         var names = [String]()
         var scores = [Int]()
         
-        // retreive any saved values
+        // retreive any saved scores
         if let savedScores = UserDefaults.standard.array(forKey: "scores") {
             
             scores = savedScores as! [Int]
             
         }
         
+        // retreive any saved names
         if let savedNames = UserDefaults.standard.array(forKey: "names") {
             
             names = savedNames as! [String]
             
         }
         
+        // merge those two temp arrays into the highscores array where
+        // i can use my struct
         for index in highScores {
             names.append(index.name)
             scores.append(index.score)
@@ -276,7 +285,7 @@ class ViewController: UIViewController {
         // call the alert views present method
         self.present(alertController, animated: true, completion: nil)
         
-        // create an action for the ok button underneath that calls the reset() func
+        // create an action for the ok button underneath that calls the setHighScores() func
         let okAction = UIAlertAction (title: "OK", style: .default, handler: { (alertAction) in
             self.setHighScores()
         })
@@ -292,8 +301,10 @@ class ViewController: UIViewController {
     
     func highScoreAlert() {
         
+        // create the ui alert controller
         let alertController = UIAlertController(title: "Highscore", message: "Your score is \(presses)", preferredStyle: UIAlertControllerStyle.alert)
         
+        // create an action for the ok button underneath that calls the setHighScores() func
         let saveAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             alert -> Void in
             
@@ -305,6 +316,7 @@ class ViewController: UIViewController {
             
         })
         
+        // add a text field to the alert view
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Name"
             textField.keyboardAppearance = .dark
@@ -313,8 +325,10 @@ class ViewController: UIViewController {
             textField.clearButtonMode = .whileEditing
         }
         
+        // add the action onto the alert view
         alertController.addAction(saveAction)
         
+        // call the alert views present method
         self.present(alertController, animated: true, completion: nil)
         
     }
