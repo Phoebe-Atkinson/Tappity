@@ -190,7 +190,7 @@ class ViewController: UIViewController {
         isPlaying = true
         
         // var for timer to use
-        var secondsLeft: Int = 3
+        var secondsLeft: Int = 30
         
         // begin the game and start the timer
         let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
