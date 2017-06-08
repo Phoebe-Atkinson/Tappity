@@ -10,6 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    // horizontal alignment conatraints for elements:
+    @IBOutlet var timeLabelConatraint: NSLayoutConstraint!
+    @IBOutlet var timeCounterConatraint: NSLayoutConstraint!
+    @IBOutlet var scoreLabelConatraint: NSLayoutConstraint!
+    @IBOutlet var scoreCounterConatraint: NSLayoutConstraint!
+    
+    // used for the landscape of the mainbutton's conatraints
+    var mainButtonXpos: CGFloat = 0
+    
+    
     // main button contraints
     @IBOutlet var yConstraint: NSLayoutConstraint!
     @IBOutlet var xConstraint: NSLayoutConstraint!
@@ -37,8 +48,45 @@ class ViewController: UIViewController {
     // stores the 10 possible colours to add difficulty
     var colours: Array = [UIColor.gray, UIColor.blue, UIColor.brown, UIColor.cyan, UIColor.lightGray, UIColor.red, UIColor.green, UIColor.orange, UIColor.purple, UIColor.yellow]
     
+    
+    struct userScore {
+        var score: Int
+        var name: String
+    }
+    
+    
     // stores the top ten high scores
     var highScores: Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    
+    
+    
+    // func for handling the rotation of the screen
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        if (UIDevice.current.orientation.isLandscape) {
+            
+            mainButtonXpos = 150
+            xConstraint.constant = mainButtonXpos
+            timeLabelConatraint.constant = -150
+            timeCounterConatraint.constant = -150
+            scoreLabelConatraint.constant = -150
+            scoreCounterConatraint.constant = -150
+            
+            
+        } else {
+            
+            mainButtonXpos = 0
+            xConstraint.constant = mainButtonXpos
+            timeLabelConatraint.constant = 0
+            timeCounterConatraint.constant = 0
+            scoreLabelConatraint.constant = 0
+            scoreCounterConatraint.constant = 0
+            
+        }
+        
+    }
+    
     
     
     
@@ -67,6 +115,9 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    
+    
     
     
     // mainButtonPushed func hooked up to the button
@@ -101,6 +152,8 @@ class ViewController: UIViewController {
     
     
     
+    
+    
     func startGame() {
         
         // set isPlaying to true
@@ -121,7 +174,7 @@ class ViewController: UIViewController {
             if (secondsLeft == 0) {
                 
                 // call end game func
-                self.endGame()
+                self.callAlerts()
                 
                 // invalidate the timer
                 timer.invalidate()
@@ -136,26 +189,10 @@ class ViewController: UIViewController {
     }
     
     
-    func endGame() {
-        
-        // create the ui alert controller
-        let alertController = UIAlertController (title: "Game Over", message: "Your score is \(presses)", preferredStyle: .actionSheet)
-        
-        // call the alert views present method
-        self.present(alertController, animated: true, completion: nil)
-        
-        // create an action for the ok button underneath that calls the reset() func
-        let okAction = UIAlertAction (title: "OK", style: .default, handler: { (alertAction) in
-            self.reset()
-        })
-        
-        // add the action onto the alert view
-        alertController.addAction(okAction)
-        
-    }
     
     
-    func reset() {
+    
+    func callAlerts() {
         
         // highscores
         
@@ -165,8 +202,21 @@ class ViewController: UIViewController {
         if (presses > highScores[9]) {
             
             highScores[9] = presses
+            highScoreAlert()
+            
+        } else {
+            
+            normalAlert()
             
         }
+        
+        
+    }
+    
+    
+    
+    
+    func setHighScores() {
         
         // order the array in descending order
         highScores = highScores.sorted { $0 > $1 }
@@ -179,6 +229,66 @@ class ViewController: UIViewController {
         
         // calling the updateHighScoresList
         theHighScoresViewController.updateHighScoresList(highScores)
+        
+        reset()
+        
+    }
+    
+    
+    
+    
+    
+    func normalAlert() {
+        
+        // create the ui alert controller
+        let alertController = UIAlertController (title: "Game Over", message: "Your score is \(presses)", preferredStyle: .actionSheet)
+        
+        // call the alert views present method
+        self.present(alertController, animated: true, completion: nil)
+        
+        // create an action for the ok button underneath that calls the reset() func
+        let okAction = UIAlertAction (title: "OK", style: .default, handler: { (alertAction) in
+            self.setHighScores()
+        })
+        
+        // add the action onto the alert view
+        alertController.addAction(okAction)
+        
+    }
+    
+    
+    
+    
+    
+    func highScoreAlert() {
+        
+        let alertController = UIAlertController(title: "Highscore", message: "Your score is \(presses)", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let saveAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            alert -> Void in
+            
+            let _ = alertController.textFields![0] as UITextField
+            //firstTextField.text!
+            self.setHighScores()
+            
+        })
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Name"
+            textField.keyboardAppearance = .dark
+            textField.keyboardType = .default
+            textField.autocorrectionType = .default
+            textField.clearButtonMode = .whileEditing
+        }
+        
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    
+    func reset() {
         
         // set isPlaying to false
         isPlaying = false
@@ -196,7 +306,7 @@ class ViewController: UIViewController {
         gameView.backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         
         // reset main button constraints:
-        xConstraint.constant = 0
+        xConstraint.constant = mainButtonXpos
         yConstraint.constant = 0
         
     }
@@ -244,6 +354,8 @@ class ViewController: UIViewController {
         yConstraint.constant = CGFloat(yRand)
         
     }
+    
+    
     
     
 

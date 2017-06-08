@@ -68,7 +68,7 @@
 /* Begin PBXFileReference section */
 		CAC171001EDBA50D00C48DD6 /* Tappity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tappity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC171031EDBA50D00C48DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CAC171051EDBA50D00C48DD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAC171051EDBA50D00C48DD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		CAC171081EDBA50D00C48DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAC1710A1EDBA50D00C48DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAC1710D1EDBA50D00C48DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -586,6 +586,7 @@
 				CAF14F021EE0EC880083B9D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAF14F051EE0EC880083B9D5 /* Build configuration list for PBXNativeTarget "Watch Tappity" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +595,7 @@
 				CAF14F001EE0EC880083B9D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

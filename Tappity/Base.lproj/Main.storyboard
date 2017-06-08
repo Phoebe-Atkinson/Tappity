@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zac-P8-fNt">
-                                <rect key="frame" x="74" y="50" width="226" height="56"/>
+                                <rect key="frame" x="74.5" y="50" width="226" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="226" id="P8e-Rz-OGm"/>
                                     <constraint firstAttribute="height" constant="56" id="nz8-JL-QwH"/>
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AFd-Yn-IsI">
-                                <rect key="frame" x="94" y="193.5" width="186" height="280"/>
+                                <rect key="frame" x="94.5" y="193.5" width="186" height="280"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgd-bi-nET">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="28"/>
@@ -198,13 +198,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkQ-CR-XrN">
-                                <rect key="frame" x="146" y="98" width="82.5" height="86.5"/>
+                                <rect key="frame" x="146.5" y="98" width="82.5" height="86.5"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="74"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGb-L9-6gE">
-                                <rect key="frame" x="136" y="478" width="102" height="48"/>
+                                <rect key="frame" x="136.5" y="478" width="102" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -259,8 +259,12 @@
                     <connections>
                         <outlet property="gameView" destination="8bC-Xf-vdC" id="Hnv-FU-wSD"/>
                         <outlet property="mainButton" destination="T64-R8-oXK" id="vlL-SC-VI1"/>
+                        <outlet property="scoreCounterConatraint" destination="wmm-3V-dTj" id="pvo-Dn-vcZ"/>
                         <outlet property="scoreLabel" destination="7WB-S6-Hju" id="FGj-Xo-rJ5"/>
+                        <outlet property="scoreLabelConatraint" destination="wtR-MD-eum" id="L4a-bC-mdI"/>
+                        <outlet property="timeCounterConatraint" destination="aFa-qT-FdI" id="F4v-Tc-QFv"/>
                         <outlet property="timeLabel" destination="bkQ-CR-XrN" id="0TV-fb-2zh"/>
+                        <outlet property="timeLabelConatraint" destination="QfN-bz-RzA" id="TAE-v1-uG4"/>
                         <outlet property="xConstraint" destination="W1q-K1-3ZY" id="kfi-tO-Jy5"/>
                         <outlet property="yConstraint" destination="xU7-3e-rHI" id="Lzy-Rs-gc4"/>
                     </connections>
