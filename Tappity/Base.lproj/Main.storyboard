@@ -161,6 +161,8 @@
                         <outlet property="highScoreTen" destination="72X-BK-1Mu" id="1Nc-tC-e8A"/>
                         <outlet property="highScoreThree" destination="xpt-dZ-ddi" id="9fX-vl-AbE"/>
                         <outlet property="highScoreTwo" destination="vVF-b0-Va8" id="taL-v5-Waz"/>
+                        <outlet property="highScoresGroupConatraint" destination="gzm-LM-EPZ" id="1XS-5J-QfK"/>
+                        <outlet property="highScoresLabelConstraint" destination="0cn-cE-vsb" id="lQ9-I7-Mzl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETe-Ag-2hc" userLabel="First Responder" sceneMemberID="firstResponder"/>

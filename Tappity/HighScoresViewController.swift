@@ -23,6 +23,31 @@ class HighScoresViewController: UIViewController {
     @IBOutlet weak var highScoreNine: UILabel!
     @IBOutlet weak var highScoreTen: UILabel!
     
+    // outlets for the constraints
+    @IBOutlet weak var highScoresLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var highScoresGroupConatraint: NSLayoutConstraint!
+    
+    
+    
+    // func for handling the rotation of the screen
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        // move certain elements accordingly
+        
+        if (UIDevice.current.orientation.isLandscape) {
+            
+            highScoresLabelConstraint.constant = -150
+            highScoresGroupConatraint.constant = 150
+            
+        } else {
+            
+            highScoresLabelConstraint.constant = 0
+            highScoresGroupConatraint.constant = 0
+            
+        }
+        
+    }
+    
     
     // to update the labels to their appropriate high scores
     func updateHighScoresList(_ scores: Array<Int>, _ names: Array<String>) {
