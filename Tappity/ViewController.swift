@@ -49,6 +49,10 @@ class ViewController: UIViewController {
     var colours: Array = [UIColor.gray, UIColor.blue, UIColor.brown, UIColor.cyan, UIColor.lightGray, UIColor.red, UIColor.green, UIColor.orange, UIColor.purple, UIColor.yellow]
     
     
+    // used to store the most recent name
+    var currentName: String = ""
+    
+    
     struct userScore {
         var score: Int
         var name: String
@@ -56,7 +60,7 @@ class ViewController: UIViewController {
     
     
     // stores the top ten high scores
-    var highScores: Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var highScores = [userScore]()
     
     
     
@@ -98,21 +102,38 @@ class ViewController: UIViewController {
         tabBarController?.selectedIndex = 1
         tabBarController?.selectedIndex = 0
         
-
+        
+        for _ in 1...10 {
+            highScores.append(userScore(score: 0, name: ""))
+        }
+        
+        var names = [String]()
+        var scores = [Int]()
         
         // retreive any saved values
-        if let savedValue = UserDefaults.standard.array(forKey: "highscores") {
+        if let savedScores = UserDefaults.standard.array(forKey: "scores") {
             
-            highScores = savedValue as! Array<Int>
-            
-            // fetching the class of the other viewcontroller.swift file
-            let theHighScoresViewController = tabBarController?.viewControllers![1] as! HighScoresViewController
-            
-            // calling the updateHighScoresList
-            theHighScoresViewController.updateHighScoresList(highScores)
-            
+            scores = savedScores as! [Int]
             
         }
+        
+        if let savedNames = UserDefaults.standard.array(forKey: "names") {
+            
+            names = savedNames as! [String]
+            
+        }
+        
+        for index in highScores {
+            names.append(index.name)
+            scores.append(index.score)
+        }
+        
+        
+        // fetching the class of the other viewcontroller.swift file
+        let theHighScoresViewController = tabBarController?.viewControllers![1] as! HighScoresViewController
+        
+        // calling the updateHighScoresList
+        theHighScoresViewController.updateHighScoresList(scores, names)
         
     }
     
@@ -160,7 +181,7 @@ class ViewController: UIViewController {
         isPlaying = true
         
         // var for timer to use
-        var secondsLeft: Int = 30
+        var secondsLeft: Int = 3
         
         // begin the game and start the timer
         let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
@@ -199,9 +220,8 @@ class ViewController: UIViewController {
         // I have used a method of checking if the lowest high score is smaller than the
         // current score of the user, if so setting the last value to the current score,
         // then sorting the array in descending order.
-        if (presses > highScores[9]) {
+        if (presses > highScores[9].score) {
             
-            highScores[9] = presses
             highScoreAlert()
             
         } else {
@@ -219,16 +239,26 @@ class ViewController: UIViewController {
     func setHighScores() {
         
         // order the array in descending order
-        highScores = highScores.sorted { $0 > $1 }
+        highScores = highScores.sorted { $0.score > $1.score }
+        
+        var names = [String]()
+        var scores = [Int]()
+        
+        for index in highScores {
+            names.append(index.name)
+            scores.append(index.score)
+        }
         
         // save the highScores
-        UserDefaults.standard.set(highScores, forKey: "highscores")
+        UserDefaults.standard.set(scores, forKey: "scores")
+        UserDefaults.standard.set(names, forKey: "names")
+        
         
         // fetching the class of the other viewcontroller.swift file
         let theHighScoresViewController = tabBarController?.viewControllers![1] as! HighScoresViewController
         
         // calling the updateHighScoresList
-        theHighScoresViewController.updateHighScoresList(highScores)
+        theHighScoresViewController.updateHighScoresList(scores, names)
         
         reset()
         
@@ -267,8 +297,10 @@ class ViewController: UIViewController {
         let saveAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             alert -> Void in
             
-            let _ = alertController.textFields![0] as UITextField
-            //firstTextField.text!
+            let firstTextField = alertController.textFields![0] as UITextField
+            self.currentName = firstTextField.text!
+            self.highScores[9].score = self.presses
+            self.highScores[9].name = self.currentName
             self.setHighScores()
             
         })
@@ -308,6 +340,9 @@ class ViewController: UIViewController {
         // reset main button constraints:
         xConstraint.constant = mainButtonXpos
         yConstraint.constant = 0
+        
+        // reset the most recent name
+        currentName = ""
         
     }
     

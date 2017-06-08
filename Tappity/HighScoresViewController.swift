@@ -10,7 +10,6 @@ import UIKit
 
 class HighScoresViewController: UIViewController {
     
-    
     // highscore label IBOutlets:
     
     @IBOutlet weak var highScoreOne: UILabel!
@@ -26,18 +25,18 @@ class HighScoresViewController: UIViewController {
     
     
     // to update the labels to their appropriate high scores
-    func updateHighScoresList(_ scores: Array<Int>) {
+    func updateHighScoresList(_ scores: Array<Int>, _ names: Array<String>) {
         
-        highScoreOne.text = "\(String(scores[0]))"
-        highScoreTwo.text = "\(String(scores[1]))"
-        highScoreThree.text = "\(String(scores[2]))"
-        highScoreFour.text = "\(String(scores[3]))"
-        highScoreFive.text = "\(String(scores[4]))"
-        highScoreSix.text = "\(String(scores[5]))"
-        highScoreSeven.text = "\(String(scores[6]))"
-        highScoreEight.text = "\(String(scores[7]))"
-        highScoreNine.text = "\(String(scores[8]))"
-        highScoreTen.text = "\(String(scores[9]))"
+        highScoreOne.text = "\(names[0]) \(String(scores[0]))"
+        highScoreTwo.text = "\(names[1]) \(String(scores[1]))"
+        highScoreThree.text = "\(names[2]) \(String(scores[2]))"
+        highScoreFour.text = "\(names[3]) \(String(scores[3]))"
+        highScoreFive.text = "\(names[4]) \(String(scores[4]))"
+        highScoreSix.text = "\(names[5]) \(String(scores[5]))"
+        highScoreSeven.text = "\(names[6]) \(String(scores[6]))"
+        highScoreEight.text = "\(names[7]) \(String(scores[7]))"
+        highScoreNine.text = "\(names[8]) \(String(scores[8]))"
+        highScoreTen.text = "\(names[9]) \(String(scores[9]))"
         
     }
 
